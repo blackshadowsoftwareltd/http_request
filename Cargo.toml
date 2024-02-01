@@ -6,3 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+reqwest = { version = "0", features = ["json"] }
+futures-util = "0"
+tokio = { version = "1", features = ["full"] }
+# openssl = { version = "0.10.63", features = ["vendored"] }
