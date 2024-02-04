@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 
-reqwest = { version = "0", features = ["json", "blocking"] }
+reqwest = { version = "0", features = ["json", "stream", "blocking"] }
 futures-util = "0"
 tokio = { version = "1", features = ["full"] }
 anyhow = "1.0.79"

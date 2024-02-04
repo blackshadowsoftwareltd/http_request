@@ -1,8 +1,9 @@
 use reqwest::Url;
+use std::fs::File;
 use std::io::copy;
-use std::{fs::File, path::PathBuf};
+use std::path::PathBuf;
 
-pub async fn download_large_file() {}
+use crate::URL;
 
 pub async fn download_file() {
     let saved_path = PathBuf::from("src");
@@ -11,11 +12,7 @@ pub async fn download_file() {
         .build()
         .unwrap();
 
-    match client
-        .get("http://127.0.0.1:49152/files/addr.rs")
-        .send()
-        .await
-    {
+    match client.get(URL).send().await {
         Ok(response) => {
             let file_name = file_name(response.url().clone());
             let mut dest = {
