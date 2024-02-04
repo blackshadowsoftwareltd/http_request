@@ -1,11 +1,13 @@
-use reqwest::{Client, Url};
+use reqwest::Url;
 use std::io::copy;
 use std::{fs::File, path::PathBuf};
 
+pub async fn download_large_file() {}
+
 pub async fn download_file() {
     let saved_path = PathBuf::from("src");
-    let client = Client::builder()
-        .danger_accept_invalid_certs(true)
+    let client = reqwest::Client::builder()
+        .danger_accept_invalid_certs(true) // To disable SSL verification
         .build()
         .unwrap();
 

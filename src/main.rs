@@ -1,5 +1,6 @@
-use download::download_file;
+use download::download_large_file;
 pub mod download;
+pub mod download_bytes;
 // use openssl::ssl::{SslConnector, SslMethod, SslVerifyMode};
 // use std::net::TcpStream;
 
@@ -14,5 +15,6 @@ async fn main() {
     // let stream = TcpStream::connect("127.0.0.1:49154").unwrap();
     // let ssl_stream = connector.connect("127.0.0.1", stream).unwrap();
 
-    download_file().await
+    // download_file().await
+    download_large_file().await
 }

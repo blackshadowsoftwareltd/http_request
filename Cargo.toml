@@ -7,7 +7,9 @@ edition = "2021"
 
 [dependencies]
 
-reqwest = { version = "0", features = ["json"] }
+reqwest = { version = "0", features = ["json", "blocking"] }
 futures-util = "0"
 tokio = { version = "1", features = ["full"] }
+anyhow = "1.0.79"
+error-chain = "0.12.4"
 # openssl = { version = "0.10.63", features = ["vendored"] }
